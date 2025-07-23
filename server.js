@@ -8,6 +8,14 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+// ✅ Ruta raíz para verificar estado del backend
+app.get('/', (req, res) => {
+  res.json({
+    success: true,
+    message: '✅ Backend SIGEP-GC activo y funcionando en Render 🚀',
+  });
+});
+
 // === Rutas principales ===
 const authRoutes = require('./routes/auth');
 const pedidoRoutes = require('./routes/pedidos');
